@@ -22,7 +22,7 @@ asn1crypto==1.5.1
     # via
     #   -r requirements/base.txt
     #   webauthn
-attrs==20.3.0
+attrs==24.2.0
     # via
     #   -r requirements/base.txt
     #   glom
