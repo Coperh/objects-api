@@ -158,10 +158,6 @@ django-cors-headers==4.4.0
     # via
     #   -r requirements/base.txt
     #   open-api-framework
-django-csp==3.8
-    # via
-    #   -r requirements/base.txt
-    #   open-api-framework
 django-filter==24.2
     # via
     #   -r requirements/base.txt
