@@ -76,7 +76,6 @@ django==4.2.15
     #   django-appconf
     #   django-axes
     #   django-cors-headers
-    #   django-csp
     #   django-filter
     #   django-formtools
     #   django-jsonform
@@ -111,8 +110,6 @@ django-appconf==1.0.6
 django-axes==6.5.1
     # via open-api-framework
 django-cors-headers==4.4.0
-    # via open-api-framework
-django-csp==3.8
     # via open-api-framework
 django-filter==24.2
     # via
@@ -238,7 +235,7 @@ notifications-api-common==0.2.2
     # via
     #   -r requirements/base.in
     #   commonground-api-common
-open-api-framework==0.8.0
+open-api-framework==0.7.0
     # via -r requirements/base.in
 orderedmultidict==1.0.1
     # via furl

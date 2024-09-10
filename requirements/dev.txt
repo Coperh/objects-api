@@ -138,7 +138,6 @@ django==4.2.15
     #   django-appconf
     #   django-axes
     #   django-cors-headers
-    #   django-csp
     #   django-debug-toolbar
     #   django-extensions
     #   django-filter
@@ -181,10 +180,6 @@ django-axes==6.5.1
     #   -r requirements/ci.txt
     #   open-api-framework
 django-cors-headers==4.4.0
-    # via
-    #   -r requirements/ci.txt
-    #   open-api-framework
-django-csp==3.8
     # via
     #   -r requirements/ci.txt
     #   open-api-framework
@@ -265,7 +260,6 @@ django-solo==2.2.0
 django-two-factor-auth[phonenumberslite,webauthn]==1.17.0
     # via
     #   -r requirements/ci.txt
-    #   django-two-factor-auth
     #   maykin-2fa
 django-webtest==1.9.7
     # via -r requirements/ci.txt
@@ -430,7 +424,7 @@ notifications-api-common==0.2.2
     # via
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.8.0
+open-api-framework==0.7.0
     # via -r requirements/ci.txt
 orderedmultidict==1.0.1
     # via
