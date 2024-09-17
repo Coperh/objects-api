@@ -1,4 +1,4 @@
-open-api-framework==0.7.0
+open-api-framework
 
 # Core python libraries
 glom # data represenation based on spec
