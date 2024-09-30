@@ -375,7 +375,7 @@ notifications-api-common==0.2.2
     # via
     #   -r requirements/base.txt
     #   commonground-api-common
-open-api-framework==0.7.0
+open-api-framework==0.8.1
     # via -r requirements/base.txt
 orderedmultidict==1.0.1
     # via
