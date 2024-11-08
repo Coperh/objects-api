@@ -1,24 +1,18 @@
-name: check-oas
+name: Check Open API Framework Version
 
 on:
   push:
-    paths:
-      - "src/objects/api/*/openapi.yaml"
-      - .github/workflows/oas-check.yml
     branches:
-      - '**'
+      - master
+    tags:
+      - '*'
   workflow_dispatch:
+#  schedule:
+#    - cron: '0 7 * * 1'
 
 jobs:
   open-api-workflow-check-oas:
-    uses: maykinmedia/open-api-workflows/.github/workflows/oas-check.yml@v1
-    strategy:
-      matrix:
-        version:
-          - v2
+    uses: maykinmedia/open-api-workflows/.github/workflows/oaf-check.yml@feature/update-oaf-pr
+
     with:
-      schema-path: 'src/objects/api/${{ matrix.version }}/openapi.yaml'
-      schema-options: "--api-version ${{ matrix.version }}"
       python-version: '3.11'
-      django-settings-module: 'objects.conf.ci'
-      apt-packages: 'libgdal-dev gdal-bin'
