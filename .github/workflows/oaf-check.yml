@@ -39,10 +39,10 @@ jobs:
       - name: Run compile dependencies
         run: ./bin/compile_dependencies.sh --upgrade-package open-api-framework
       - name: Get OAF Version
-        run: $oaf_version=$(grep -Po '(?<=pip-tools==)[^\n]*' requirements/dev.txt)
+        run: echo "OAF_VERSION=$(grep -Po '(?<=open-api-framework==)[^\n]*' requirements/dev.txt)" >> $GITHUB_ENV
       - name: Create Branch
-        run: git branch update/open-api-framework-$oaf_version
+        run: git branch update/open-api-framework-${{env.OAF_VERSION}}
       - name: Commit Changes
-        run: "git commit -f requires/*.txt -m ':arrow_up: Update oaf to $oaf_version'"
+        run: "git commit -i requirements/*.txt -m ':arrow_up: Update oaf to ${{env.OAF_VERSION}}'"
       - name: log
         run: git log
