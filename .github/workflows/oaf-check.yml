@@ -50,3 +50,13 @@ jobs:
         run: "git commit -i requirements/*.txt -m ':arrow_up: Update Open-API-Framework to ${{env.OAF_VERSION}}'"
       - name: Push Changes
         run: git push -f --set-upstream origin update/open-api-framework-${{env.OAF_VERSION}}
+      - name: Check for Existing PR
+        id: existing-pr
+        run: gh pr view update/open-api-framework-${{env.OAF_VERSION}} >> /dev/null
+      - name: Create PR
+        if: success()
+        run: |
+          gh pr create --title "Update Open API Framework to ${{env.OAF_VERSION}}"\
+          --body "Auto generated with github action ${{github.run_id}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
