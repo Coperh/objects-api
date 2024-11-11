@@ -8,7 +8,6 @@ jobs:
   oaf-up-to-date:
     name: Check for new OAF version
     runs-on: ubuntu-latest
-#    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,9 +25,8 @@ jobs:
   create-oaf-update-pr:
     name: Create a pull requests to update OAF
     runs-on: ubuntu-latest
-#    needs: [oaf-up-to-date]
-    #if: needs.oaf-up-to-date.result == 'failure'
-    if: always()
+    needs: [oaf-up-to-date]
+    if: failure()
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
