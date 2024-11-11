@@ -44,9 +44,9 @@ jobs:
         run: ./bin/compile_dependencies.sh --upgrade-package open-api-framework
       - name: Get OAF Version
         run: echo "OAF_VERSION=$(grep -Po '(?<=open-api-framework==)[^\n]*' requirements/dev.txt)" >> $GITHUB_ENV
-      - name: Create Branch
-        run: git branch update/open-api-framework-${{env.OAF_VERSION}}
+      - name: Create and Checkout Branch
+        run: git checkout -q -B update/open-api-framework-${{env.OAF_VERSION}}
       - name: Commit Changes
-        run: "git commit -i requirements/*.txt -m ':arrow_up: Update oaf to ${{env.OAF_VERSION}}'"
-      - name: log
-        run: git log
+        run: "git commit -i requirements/*.txt -m ':arrow_up: Update Open-API-Framework to ${{env.OAF_VERSION}}'"
+      - name: Push Changes
+        run: git push -f --set-upstream origin update/open-api-framework-${{env.OAF_VERSION}}
