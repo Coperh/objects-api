@@ -14,7 +14,7 @@ API to manage objects belonging to a certain object type.
 Developed by `Maykin Media B.V.`_ commissioned by the Municipality of Utrecht.
 
 
-Example Readme Eddit
+Example Readme Eddit again
 
 Introduction
 ============
